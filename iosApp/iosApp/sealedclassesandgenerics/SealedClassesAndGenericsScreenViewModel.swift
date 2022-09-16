@@ -1,8 +1,8 @@
 //
-//  MainContentViewModel.swift
+//  SealedClassesAndGenericsScreenViewModel.swift
 //  iosApp
 //
-//  Created by Emanuele on 15/09/22.
+//  Created by Emanuele on 16/09/22.
 //  Copyright © 2022 orgName. All rights reserved.
 //
 
@@ -10,13 +10,9 @@ import Foundation
 import shared
 import sharedSwift
 
-class MainContentViewModel: ObservableObject {
+class SealedClassesAndGenericsScreenViewModel: ObservableObject {
     
-    @Published var state: MainContentViewState = MainContentViewState()
-    
-    init() {
-        self.state = MainContentViewState(randomInt: nil)
-    }
+    @Published var state: SealedClassesAndGenericsScreenState = SealedClassesAndGenericsScreenState()
     
     func onGetRandomIntClicked() {
         let randomInt = RandomNumberGeneratorKt.getRandomInt()

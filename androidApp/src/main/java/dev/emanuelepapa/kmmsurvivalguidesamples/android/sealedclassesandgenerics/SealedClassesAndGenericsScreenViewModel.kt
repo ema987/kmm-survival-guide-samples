@@ -1,16 +1,16 @@
-package dev.emanuelepapa.kmmsurvivalguidesamples.android
+package dev.emanuelepapa.kmmsurvivalguidesamples.android.sealedclassesandgenerics
 
 import androidx.lifecycle.ViewModel
-import dev.emanuelepapa.kmmsurvivalguidesamples.generics.getRandomInt
-import dev.emanuelepapa.kmmsurvivalguidesamples.generics.getRandomIntWrappedInIntResult
-import dev.emanuelepapa.kmmsurvivalguidesamples.generics.getRandomIntWrappedInResult
+import dev.emanuelepapa.kmmsurvivalguidesamples.sealedclassesandgenerics.getRandomInt
+import dev.emanuelepapa.kmmsurvivalguidesamples.sealedclassesandgenerics.getRandomIntWrappedInIntResult
+import dev.emanuelepapa.kmmsurvivalguidesamples.sealedclassesandgenerics.getRandomIntWrappedInResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class MainActivityViewModel: ViewModel() {
+class SealedClassesAndGenericsScreenViewModel: ViewModel() {
 
-    private val mutableState = MutableStateFlow(MainActivityState(randomInt = null, randomIntWrappedInIntResult = null, randomIntWrappedInResult = null))
-    val state: StateFlow<MainActivityState> = mutableState
+    private val mutableState = MutableStateFlow(SealedClassesAndGenericScreenState(randomInt = null, randomIntWrappedInIntResult = null, randomIntWrappedInResult = null))
+    val state: StateFlow<SealedClassesAndGenericScreenState> = mutableState
 
     fun onGetRandomIntClicked() {
         getRandomInt().run {

@@ -1,4 +1,4 @@
-package dev.emanuelepapa.kmmsurvivalguidesamples.generics
+package dev.emanuelepapa.kmmsurvivalguidesamples.sealedclassesandgenerics
 
 /**
  * Returns the result of an operation

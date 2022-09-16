@@ -1,77 +1,56 @@
 package dev.emanuelepapa.kmmsurvivalguidesamples.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Button
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
-import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.ViewModelProvider
-import dev.emanuelepapa.kmmsurvivalguidesamples.generics.KMMIntResult
-import dev.emanuelepapa.kmmsurvivalguidesamples.generics.KMMResult
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.inlineclasses.InlineClassesScreen
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.inlineclasses.InlineClassesScreenViewModel
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.sealedclassesandgenerics.SealedClassesAndGenericsScreen
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.sealedclassesandgenerics.SealedClassesAndGenericsScreenViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: MainActivityViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         setContent {
-            val state = viewModel.state.collectAsState().value
-            Column {
-                Row {
-                    Button(onClick = {
-                        viewModel.onGetRandomIntClicked()
-                    }) {
-                        Text(text = "getRandomInt")
-                    }
-                    val randomIntText = state.randomInt?.let {
-                        "Int: $it"
-                    } ?: "Tap the button"
-                    Text(text = randomIntText)
-                }
-                Row {
-                    Button(onClick = {
-                        viewModel.onGetRandomIntWrappedInIntResultClicked()
-                    }) {
-                        Text(text = "getRandomIntWrappedInIntResult")
-                    }
-                    val randomIntWrappedInIntResultText = when (val randomIntWrappedInIntResult = state.randomIntWrappedInIntResult) {
-                        is KMMIntResult.ErrorKMMIntResult -> {
-                            "Error: ${randomIntWrappedInIntResult.throwable.message}"
-                        }
-                        is KMMIntResult.SuccessKMMIntResult -> {
-                            "Success: ${randomIntWrappedInIntResult.value}"
-                        }
-                        null -> {
-                            "Tap the button"
+            val activity = this
+            val navController = rememberNavController()
+            Scaffold {
+                NavHost(
+                    navController,
+                    startDestination = "Home"
+                ) {
+                    composable("Home") {
+                        Column {
+                            Button(onClick = {
+                                navController.navigate("SealedClassesAndGenerics")
+                            }) {
+                                Text("Sealed classes and generics")
+                            }
+                            Button(onClick = {
+                                navController.navigate("InlineClasses")
+                            }) {
+                                Text("Inline classes")
+                            }
                         }
                     }
-                    Text(text = randomIntWrappedInIntResultText)
-                }
-                Row {
-                    Button(onClick = {
-                        viewModel.onGetRandomIntWrappedInResultClicked()
-                    }) {
-                        Text(text = "getRandomIntWrappedInResult")
+                    composable("SealedClassesAndGenerics") {
+                        SealedClassesAndGenericsScreen(viewModel = ViewModelProvider(activity)[SealedClassesAndGenericsScreenViewModel::class.java])
                     }
-                    val randomIntWrappedInResultText = when (val randomIntWrappedInResult = state.randomIntWrappedInResult) {
-                        is KMMResult.ErrorKMMResult -> {
-                            "Error: ${randomIntWrappedInResult.throwable.message}"
-                        }
-                        is KMMResult.SuccessKMMResult -> {
-                            "Success: ${randomIntWrappedInResult.value}"
-                        }
-                        null -> {
-                            "Tap the button"
-                        }
+                    composable("InlineClasses") {
+                        InlineClassesScreen(viewModel = ViewModelProvider(activity)[InlineClassesScreenViewModel::class.java])
                     }
-                    Text(text = randomIntWrappedInResultText)
                 }
             }
         }
     }
+
 }

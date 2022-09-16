@@ -5,6 +5,7 @@ plugins {
 
 val composeVersion = "1.2.0-rc02"
 val activityComposeVersion = "1.5.1"
+val navigationComposeVersion = "2.5.0"
 
 android {
     compileSdk = 32
@@ -34,6 +35,7 @@ dependencies {
 
     implementation("androidx.compose.foundation:foundation:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.navigation:navigation-compose:$navigationComposeVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
     implementation("androidx.activity:activity-compose:$activityComposeVersion")
