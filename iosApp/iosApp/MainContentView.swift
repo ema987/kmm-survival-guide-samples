@@ -15,6 +15,9 @@ struct MainContentView: View {
                 NavigationLink(destination: CoroutinesScreen(viewModel: CoroutinesScreenViewModel())) {
                     Text("Coroutines")
                 }
+                NavigationLink(destination: ResultScreen(viewModel: ResultScreenViewModel())) {
+                    Text("Result")
+                }
             }
         }
     }

@@ -15,6 +15,8 @@ import dev.emanuelepapa.kmmsurvivalguidesamples.android.coroutines.CoroutinesScr
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.coroutines.CoroutinesScreenViewModel
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.inlineclasses.InlineClassesScreen
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.inlineclasses.InlineClassesScreenViewModel
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.result.ResultScreen
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.result.ResultScreenViewModel
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.sealedclassesandgenerics.SealedClassesAndGenericsScreen
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.sealedclassesandgenerics.SealedClassesAndGenericsScreenViewModel
 
@@ -47,6 +49,11 @@ class MainActivity : AppCompatActivity() {
                             }) {
                                 Text("Coroutines")
                             }
+                            Button(onClick = {
+                                navController.navigate("Result")
+                            }) {
+                                Text("Result")
+                            }
                         }
                     }
                     composable("SealedClassesAndGenerics") {
@@ -57,6 +64,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     composable("Coroutines") {
                         CoroutinesScreen(viewModel = ViewModelProvider(activity)[CoroutinesScreenViewModel::class.java])
+                    }
+                    composable("Result") {
+                        ResultScreen(viewModel = ViewModelProvider(activity)[ResultScreenViewModel::class.java])
                     }
                 }
             }

@@ -26,6 +26,9 @@
 		A8430C6D28D5C7E2003722CC /* KMPNativeCoroutinesCombine in Frameworks */ = {isa = PBXBuildFile; productRef = A8430C6C28D5C7E2003722CC /* KMPNativeCoroutinesCombine */; };
 		A8430C6F28D5C7E2003722CC /* KMPNativeCoroutinesCore in Frameworks */ = {isa = PBXBuildFile; productRef = A8430C6E28D5C7E2003722CC /* KMPNativeCoroutinesCore */; };
 		A8430C7128D5C7E2003722CC /* KMPNativeCoroutinesRxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8430C7028D5C7E2003722CC /* KMPNativeCoroutinesRxSwift */; };
+		A8D040FF28D606800088DB45 /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D040FE28D606800088DB45 /* ResultScreen.swift */; };
+		A8D0410128D606870088DB45 /* ResultScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D0410028D606870088DB45 /* ResultScreenState.swift */; };
+		A8D0410328D6068F0088DB45 /* ResultScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D0410228D6068F0088DB45 /* ResultScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		A8430C6328D5C3A3003722CC /* CoroutinesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoroutinesScreen.swift; sourceTree = "<group>"; };
 		A8430C6528D5C3AC003722CC /* CoroutinesScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoroutinesScreenState.swift; sourceTree = "<group>"; };
 		A8430C6728D5C3B5003722CC /* CoroutinesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoroutinesScreenViewModel.swift; sourceTree = "<group>"; };
+		A8D040FE28D606800088DB45 /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
+		A8D0410028D606870088DB45 /* ResultScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreenState.swift; sourceTree = "<group>"; };
+		A8D0410228D6068F0088DB45 /* ResultScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreenViewModel.swift; sourceTree = "<group>"; };
 		A8D55637F89F662B15B23670 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +101,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				A8D040FD28D606770088DB45 /* result */,
 				A8430C6228D5C397003722CC /* coroutines */,
 				A8430C5B28D4C89E003722CC /* inlineclasses */,
 				A8430C5428D4C0BA003722CC /* sealedclassesandgenerics */,
@@ -144,6 +151,16 @@
 				A8430C6728D5C3B5003722CC /* CoroutinesScreenViewModel.swift */,
 			);
 			path = coroutines;
+			sourceTree = "<group>";
+		};
+		A8D040FD28D606770088DB45 /* result */ = {
+			isa = PBXGroup;
+			children = (
+				A8D040FE28D606800088DB45 /* ResultScreen.swift */,
+				A8D0410028D606870088DB45 /* ResultScreenState.swift */,
+				A8D0410228D6068F0088DB45 /* ResultScreenViewModel.swift */,
+			);
+			path = result;
 			sourceTree = "<group>";
 		};
 		D58AFB96B9CBD8139F62745E /* Pods */ = {
@@ -260,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D0410128D606870088DB45 /* ResultScreenState.swift in Sources */,
 				A8430C6628D5C3AC003722CC /* CoroutinesScreenState.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				A8430C5D28D4C8B0003722CC /* InlineClassesScreen.swift in Sources */,
@@ -268,10 +286,12 @@
 				A8430C6828D5C3B5003722CC /* CoroutinesScreenViewModel.swift in Sources */,
 				A8430C6128D4C8C1003722CC /* InlineClassesScreenViewModel.swift in Sources */,
 				A8430C5A28D4C0E3003722CC /* SealedClassesAndGenericsScreenViewModel.swift in Sources */,
+				A8D0410328D6068F0088DB45 /* ResultScreenViewModel.swift in Sources */,
 				A8430C5628D4C0CE003722CC /* SealedClassesAndGenericsScreenState.swift in Sources */,
 				7555FF83242A565900829871 /* MainContentView.swift in Sources */,
 				A8430C6428D5C3A3003722CC /* CoroutinesScreen.swift in Sources */,
 				A8430C5F28D4C8B8003722CC /* InlineClassesScreenState.swift in Sources */,
+				A8D040FF28D606800088DB45 /* ResultScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
