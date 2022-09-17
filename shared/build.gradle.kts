@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("dev.icerock.moko.kswift") version "0.6.0"
+    id("com.rickclephas.kmp.nativecoroutines") version "0.12.2-new-mm"
 }
 
 version = "1.0"

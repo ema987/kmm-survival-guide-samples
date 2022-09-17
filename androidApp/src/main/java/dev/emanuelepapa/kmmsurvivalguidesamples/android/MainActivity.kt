@@ -11,6 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.coroutines.CoroutinesScreen
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.coroutines.CoroutinesScreenViewModel
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.inlineclasses.InlineClassesScreen
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.inlineclasses.InlineClassesScreenViewModel
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.sealedclassesandgenerics.SealedClassesAndGenericsScreen
@@ -40,6 +42,11 @@ class MainActivity : AppCompatActivity() {
                             }) {
                                 Text("Inline classes")
                             }
+                            Button(onClick = {
+                                navController.navigate("Coroutines")
+                            }) {
+                                Text("Coroutines")
+                            }
                         }
                     }
                     composable("SealedClassesAndGenerics") {
@@ -47,6 +54,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     composable("InlineClasses") {
                         InlineClassesScreen(viewModel = ViewModelProvider(activity)[InlineClassesScreenViewModel::class.java])
+                    }
+                    composable("Coroutines") {
+                        CoroutinesScreen(viewModel = ViewModelProvider(activity)[CoroutinesScreenViewModel::class.java])
                     }
                 }
             }

@@ -12,6 +12,9 @@ struct MainContentView: View {
                 NavigationLink(destination: InlineClassesScreenView(viewModel: InlineClassesScreenViewModel())) {
                     Text("Inline classes")
                 }
+                NavigationLink(destination: CoroutinesScreen(viewModel: CoroutinesScreenViewModel())) {
+                    Text("Coroutines")
+                }
             }
         }
     }
