@@ -18,6 +18,9 @@ struct MainContentView: View {
                 NavigationLink(destination: ResultScreen(viewModel: ResultScreenViewModel())) {
                     Text("Result")
                 }
+                NavigationLink(destination: ThirdPartyScreen(viewModel: ThirdPartyScreenViewModel())) {
+                    Text("ThirdParty")
+                }
             }
         }
     }

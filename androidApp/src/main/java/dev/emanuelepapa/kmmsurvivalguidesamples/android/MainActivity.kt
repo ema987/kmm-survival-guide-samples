@@ -19,6 +19,8 @@ import dev.emanuelepapa.kmmsurvivalguidesamples.android.result.ResultScreen
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.result.ResultScreenViewModel
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.sealedclassesandgenerics.SealedClassesAndGenericsScreen
 import dev.emanuelepapa.kmmsurvivalguidesamples.android.sealedclassesandgenerics.SealedClassesAndGenericsScreenViewModel
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.thirdparty.ThirdPartyScreen
+import dev.emanuelepapa.kmmsurvivalguidesamples.android.thirdparty.ThirdPartyScreenViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,6 +56,11 @@ class MainActivity : AppCompatActivity() {
                             }) {
                                 Text("Result")
                             }
+                            Button(onClick = {
+                                navController.navigate("ThirdParty")
+                            }) {
+                                Text("ThirdParty Libraries")
+                            }
                         }
                     }
                     composable("SealedClassesAndGenerics") {
@@ -67,6 +74,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     composable("Result") {
                         ResultScreen(viewModel = ViewModelProvider(activity)[ResultScreenViewModel::class.java])
+                    }
+                    composable("ThirdParty") {
+                        ThirdPartyScreen(viewModel = ViewModelProvider(activity)[ThirdPartyScreenViewModel::class.java])
                     }
                 }
             }
